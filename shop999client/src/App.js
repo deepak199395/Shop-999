@@ -5,6 +5,7 @@ import Footer from './Screens/Layouts/Footer'
 import Header from './Screens/Layouts/Header'
 import Register from './Screens/Auth/Register'
 import Login from './Screens/Auth/Login'
+import Carosel from './Screens/Carosel/Carousels'
 const App = () => {
   return (
     <div>
@@ -14,6 +15,7 @@ const App = () => {
       <Route path='/header' element={<Header/>}/>
       <Route path='/register' element={<Register/>}/>
       <Route path='/login' element={<Login/>}/>
+      <Route path='/carousels' element={<Carosel/>}/>
      </Routes>
     </div>
   )
