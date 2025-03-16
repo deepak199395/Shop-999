@@ -6,6 +6,7 @@ import Header from './Screens/Layouts/Header'
 import Register from './Screens/Auth/Register'
 import Login from './Screens/Auth/Login'
 import Carosel from './Screens/Carosel/Carousels'
+import Admin from './Screens/AdminPannel/Admin'
 const App = () => {
   return (
     <div>
@@ -16,6 +17,7 @@ const App = () => {
       <Route path='/register' element={<Register/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/carousels' element={<Carosel/>}/>
+      <Route path='/admin' element={<Admin/>}/>
      </Routes>
     </div>
   )
