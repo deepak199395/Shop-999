@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { FaUser, FaBox, FaShoppingCart, FaCog, FaChartBar } from "react-icons/fa";
-import "../../Styles/admin.css"; // Import the CSS file
+import { FaUser, FaBox, FaShoppingCart, FaCog, FaChartBar, FaBars, FaTimes } from "react-icons/fa";
+import "../../Styles/admin.css"; // Import CSS file
+
 const Admin = () => {
   const [activeSection, setActiveSection] = useState("dashboard");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const sections = [
     { name: "Dashboard", icon: <FaChartBar />, key: "dashboard" },
@@ -14,14 +16,22 @@ const Admin = () => {
 
   return (
     <div className="admin-container">
-      {/* Sidebar */}
-      <aside className="admin-sidebar">
+      {/* 🟢 Hamburger Menu for Mobile */}
+      <button className="menu-toggle" onClick={() => setSidebarOpen(!sidebarOpen)}>
+        {sidebarOpen ? <FaTimes /> : <FaBars />}
+      </button>
+
+      {/* 🟢 Sidebar */}
+      <aside className={`admin-sidebar ${sidebarOpen ? "open" : ""}`}>
         <h2>Admin Panel</h2>
         <nav className="admin-nav">
           {sections.map((section) => (
             <button
               key={section.key}
-              onClick={() => setActiveSection(section.key)}
+              onClick={() => {
+                setActiveSection(section.key);
+                setSidebarOpen(false);
+              }}
               className={activeSection === section.key ? "active" : ""}
             >
               {section.icon} {section.name}
@@ -30,7 +40,7 @@ const Admin = () => {
         </nav>
       </aside>
 
-      {/* Main Content */}
+      {/* 🟢 Main Content */}
       <main className="admin-main">
         <div className="admin-content">
           {activeSection === "dashboard" && <Dashboard />}
