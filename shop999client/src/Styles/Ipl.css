@@ -11,17 +11,16 @@
   margin-bottom: 20px;
 }
 
-/* Scrollable Row for Tickets */
 .ticket-container {
   display: flex;
   flex-direction: row;
-  overflow-x: auto;  /* Enables horizontal scrolling */
+  overflow-x: auto; 
   white-space: nowrap;
   padding: 10px;
-  gap: 15px; /* Adds space between tickets */
+  gap: 15px;
+  scrollbar-width: none; 
 }
 
-/* Hide scrollbar for a cleaner look */
 .ticket-container::-webkit-scrollbar {
   display: none;
 }
@@ -31,9 +30,9 @@
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
-  width: 300px;
+  width: 280px;
   text-align: center;
-  flex: 0 0 auto;  /* Prevents wrapping, keeps in row */
+  flex: 0 0 auto; 
   transition: transform 0.2s ease-in-out;
 }
 
@@ -46,6 +45,7 @@
   height: 200px;
   object-fit: cover;
   margin-bottom: 10px;
+  border-radius: 8px;
 }
 
 .price {
@@ -67,4 +67,43 @@
 
 .buy-btn:hover {
   background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .ticket-container {
+    flex-wrap: nowrap; 
+    gap: 10px; 
+    padding: 5px;
+  }
+
+  .ticket-card {
+    width: 250px; 
+    padding: 15px;
+  }
+
+  .team-img {
+    height: 180px; 
+  }
+
+  .buy-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .ticket-card {
+    width: 220px; 
+    padding: 12px;
+  }
+
+  .team-img {
+    height: 160px;
+  }
+
+  .buy-btn {
+    padding: 7px 14px;
+    font-size: 13px;
+  }
 }
