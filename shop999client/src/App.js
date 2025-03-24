@@ -8,6 +8,7 @@ import Login from './Screens/Auth/Login'
 import Carosel from './Screens/Carosel/Carousels'
 import Admin from './Screens/AdminPannel/Admin'
 import BalconyTckets from './Screens/Products/Ipl'
+import BookingScreen from "../src/Screens/Products/BookingScreen"
 const App = () => {
   return (
     <div>
@@ -20,6 +21,7 @@ const App = () => {
       <Route path='/carousels' element={<Carosel/>}/>
       <Route path='/admin' element={<Admin/>}/>
       <Route path='/balconyTicked' element={<BalconyTckets/>}/>
+      <Route path='bookingScreen' element={<BookingScreen/>}/>
      </Routes>
     </div>
   )

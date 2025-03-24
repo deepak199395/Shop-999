@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import "../../Styles/Ipl.css";
 
 const Ipl = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   const GetTicketInfo = async () => {
     try {
       const response = await fetch("https://shop999backend.vercel.app/api/auth/getticketsinfo");
       const result = await response.json();
-
+     console.log(result);
+     
       if (result.success && Array.isArray(result.ticketsinfo)) {
         setData(result.ticketsinfo);
       } else {
@@ -25,9 +29,14 @@ const Ipl = () => {
     }
   };
 
+const handleOpenBooking=async(ticket)=>{
+  navigate("/bookingScreen",{state:{ticket}})
+}
+
   useEffect(() => {
     GetTicketInfo();
   }, []);
+  
 
   return (
     <div className="container">
@@ -35,7 +44,7 @@ const Ipl = () => {
       {loading ? (
         <p>Loading...</p>
       ) : data.length > 0 ? (
-        <div className="ticket-container"> {/* Scrollable row */}
+        <div className="ticket-container"> 
           {data.map((ticket) => (
             <div className="ticket-card" key={ticket._id}>
               <img src={ticket.TeamImage} alt={ticket.matchTeam1} className="team-img"/>
@@ -44,7 +53,7 @@ const Ipl = () => {
               <p>Date: {ticket.matchDate}</p>
               <p>Time: {ticket.matchTime}</p>
               <p className="price">Price: ₹{ticket.matchTicketPrice}</p>
-              <button className="buy-btn">Book Now</button>
+              <button className="buy-btn" onClick={() => handleOpenBooking(ticket)}>Book Now</button>
             </div>
           ))}
         </div>

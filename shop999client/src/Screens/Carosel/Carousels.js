@@ -31,7 +31,7 @@ const Carousels = () => {
             <img
               src={img}
               alt={`Slide ${index + 1}`}
-              style={{ width: "100%", height: "550px", borderRadius: "10px" }}
+              style={{ width: "100%", height: "350px", borderRadius: "10px" }}
             />
           </div>
         ))}
