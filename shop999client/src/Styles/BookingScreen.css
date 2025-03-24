@@ -7,9 +7,23 @@
     padding: 20px;
     background: url('../Accests/ipltroffy.png') no-repeat center center/cover;
     border-bottom: 3px solid #007bff;
-    min-height: 600px;
+    min-height: 500px;
     width: 98%;
-    gap: 20px;
+    gap: 15px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.BookingScreenMain::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 123, 255, 0.3); 
+    backdrop-filter: blur(8px);
+    z-index: 0;
     border-radius: 10px;
 }
 
@@ -19,15 +33,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 15px;
     border-radius: 12px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(6px);
     transition: all 0.3s ease-in-out;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .BookingDetails:hover,
 .Matchfullinfo:hover {
     transform: scale(1.02);
-    box-shadow: floralwhite;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .BookingDetails h1 {
@@ -35,7 +52,7 @@
     font-size: 26px;
     margin-bottom: 20px;
     font-weight: bold;
-    text-shadow: floralwhite;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .Matchfullinfo {
@@ -45,26 +62,29 @@
     align-items: center;
     padding: 20px;
     border-radius: 12px;
-    box-shadow:floralwhite;
+    background: rgba(247, 250, 249, 0.4);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
-
+    color: #333;
 }
 
 .Matchfullinfo h1 {
-    color: #b30000;
-    font-size: 56px;
+    color: #0a0a0a;
+    font-size: 48px;
     margin-bottom: 20px;
     font-weight: bold;
-    text-shadow: floralwhite;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.matchinfotxt{
+
+.matchinfotxt {
     color: rgb(4, 4, 4);
-    font-size: 46px;
-    margin-bottom: 20px;
+    font-size: 18px;
+    margin-bottom: 10px;
     font-weight: bold;
-    text-shadow: floralwhite;
-    background-color:white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
+
 /* Image Styling */
 .team-img {
     width: 100%;
@@ -72,7 +92,7 @@
     height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
-    box-shadow: floralwhite;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease-in-out;
 }
 
@@ -85,7 +105,8 @@
     display: flex;
     flex-direction: column;
     width: 80%;
-    background: #e3f2fd;
+    background: rgba(227, 242, 253, 0.4);
+    backdrop-filter: blur(5px);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 5px 15px rgba(0, 0, 255, 0.2);
@@ -104,14 +125,6 @@
     border: 1px solid #ccc;
     font-size: 16px;
 }
-
-
-
-
-
-
-
-
 
 /* Responsive Design */
 @media (max-width: 992px) {

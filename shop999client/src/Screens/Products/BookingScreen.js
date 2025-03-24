@@ -52,13 +52,13 @@ const BookingScreen = () => {
                     <h1>Match  Details</h1>
                     {
                         <>
-                            <h2 className="matchinfotxt">{ticket.matchName}</h2>
-                            <p className="matchinfotxt">
+                            <h4 className="matchinfotxt">{ticket.matchName}</h4>
+                            <p1 className="matchinfotxt">
                                 {ticket.matchTeam1} vs {ticket.matchTeam2}
-                            </p>
-                            <p className="matchinfotxt">Date: {ticket.matchDate}</p>
-                            <p className="matchinfotxt">Time: {ticket.matchTime}</p>
-                            <p className="matchinfotxt">Price: ₹{ticket.matchTicketPrice}</p>
+                            </p1>
+                            <p4 className="matchinfotxt">Date: {ticket.matchDate}</p4>
+                            <p4 className="matchinfotxt">Time: {ticket.matchTime}</p4>
+                            <p4 className="matchinfotxt">Price: ₹{ticket.matchTicketPrice}</p4>
                         </>
 
 
