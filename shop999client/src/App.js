@@ -7,6 +7,7 @@ import Register from './Screens/Auth/Register'
 import Login from './Screens/Auth/Login'
 import Carosel from './Screens/Carosel/Carousels'
 import Admin from './Screens/AdminPannel/Admin'
+import BalconyTckets from './Screens/Products/Ipl'
 const App = () => {
   return (
     <div>
@@ -18,6 +19,7 @@ const App = () => {
       <Route path='/login' element={<Login/>}/>
       <Route path='/carousels' element={<Carosel/>}/>
       <Route path='/admin' element={<Admin/>}/>
+      <Route path='/balconyTicked' element={<BalconyTckets/>}/>
      </Routes>
     </div>
   )

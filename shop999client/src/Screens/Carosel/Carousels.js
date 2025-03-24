@@ -4,14 +4,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 // Importing images
-import carosel1 from "../../Accests/c1.png";
-import carosel2 from "../../Accests/c2.png";
-import carosel3 from "../../Accests/c3.png";
-import carosel4 from "../../Accests/c4.png";
-import carosel5 from "../../Accests/c5.png";
+import carosel6 from "../../Accests/kkr.png";
+import carosel7 from "../../Accests/LSJ.png"
+import carosel9 from "../../Accests/ipl2025.png"
+import carosel10 from "../../Accests/MI.png"
 
 const Carousels = () => {
-  const images = [carosel1, carosel2, carosel3, carosel4, carosel5];
+  const images = [carosel6,carosel7,carosel9,carosel10];
 
   const settings = {
     dots: true,
@@ -32,7 +31,7 @@ const Carousels = () => {
             <img
               src={img}
               alt={`Slide ${index + 1}`}
-              style={{ width: "100%", height: "250px", borderRadius: "10px" }}
+              style={{ width: "100%", height: "550px", borderRadius: "10px" }}
             />
           </div>
         ))}
