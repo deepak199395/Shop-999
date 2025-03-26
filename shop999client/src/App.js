@@ -9,6 +9,7 @@ import Carosel from './Screens/Carosel/Carousels'
 import Admin from './Screens/AdminPannel/Admin'
 import BalconyTckets from './Screens/Products/Ipl'
 import BookingScreen from "../src/Screens/Products/BookingScreen"
+import Payment from './Screens/PaymentScreen/Payment'
 const App = () => {
   return (
     <div>
@@ -21,7 +22,8 @@ const App = () => {
       <Route path='/carousels' element={<Carosel/>}/>
       <Route path='/admin' element={<Admin/>}/>
       <Route path='/balconyTicked' element={<BalconyTckets/>}/>
-      <Route path='bookingScreen' element={<BookingScreen/>}/>
+      <Route path='/bookingScreen' element={<BookingScreen/>}/>
+      <Route path='/payment' element={<Payment/>}/>
      </Routes>
     </div>
   )
