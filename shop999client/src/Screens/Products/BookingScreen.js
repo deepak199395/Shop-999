@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import Header from "../Layouts/Header";
 import Footer from "../Layouts/Footer";
 import "../../Styles/BookingScreen.css";
+import {useNavigate} from "react-router-dom"
 import { useLocation } from "react-router-dom";
 const BookingScreen = () => {
     const location = useLocation();
     const ticket = location.state?.ticket;
-    const [loading, setLoading] = useState(false);  // ✅ Loading state
+    const [loading, setLoading] = useState(false);  
+    const navigate = useNavigate()
     const [formData, setFormData] = useState({
         fullname: "",
         PhoneNumber: "",
@@ -44,14 +46,14 @@ const BookingScreen = () => {
                     numberOfTickets: ""
                 });
               if (response.status === 201) {
-                    window.location.href = "/payment";
+                    navigate("/payment",{state:{formData}})
                 }
             } else {
                 setError(result.message || "Failed to book tickets");
             }
         } catch (error) {
             setError("Something went wrong. Please try again.");
-            console.error("here is error================>:", error);
+            console.error(error);
         }finally{
             setLoading(false);
         }
