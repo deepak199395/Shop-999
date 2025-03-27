@@ -7,10 +7,12 @@ import { useLocation } from "react-router-dom";
 const Payment = () => {
   const [selectedMethod, setSelectedMethod] = useState('');
   const [showModal, setShowModal] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const banks = ["HDFC Bank", "ICICI Bank", "SBI Bank", "Axis Bank", "Kotak Bank", "Yes Bank", "PNB Bank", "Bank of Baroda"];
 
   const location = useLocation(); // ✅ Fixing case issue
   const formData = location.state?.formData; // ✅ Fixing case issue
-  console.log("==========>",formData)
+  console.log("==========>", formData)
   const openModal = (method) => {
     setSelectedMethod(method);
     setShowModal(true);
@@ -19,7 +21,9 @@ const Payment = () => {
   const closeModal = () => {
     setShowModal(false);
   };
-
+  const filteredBanks = banks.filter(bank =>
+    bank.toLowerCase().includes(searchQuery.toLowerCase())
+  );
   return (
     <div className='MainCantainer'>
       <div className="payment-container">
@@ -47,25 +51,50 @@ const Payment = () => {
               <span className="close-button" onClick={closeModal}>&times;</span>
               {selectedMethod === 'card' && (
                 <div className="card-payment">
+                  {/* Search Input */}
+                  <input
+                    type="text"
+                    placeholder="Search bank..."
+                    className="input-field search-bar"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                  />
                   <h3>Enter Card Details</h3>
-                  <input type="text" placeholder="Card Number" className="input-field" />
+                  <input type="text" placeholder="XXXX  XXXX  XXXX  XXXX" className="input-field card-number" />
                   <input type="text" placeholder="Card Holder Name" className="input-field" />
-                  <input type="text" placeholder="Expiry Date (MM/YY)" className="input-field" />
-                  <input type="password" placeholder="CVV" className="input-field" />
+
+                  <div className="input-group">
+                    <input type="text" placeholder="MM / YY" className="input-field" />
+                    <input type="password" placeholder="CVV" className="input-field" />
+                  </div>
                 </div>
+
               )}
 
               {selectedMethod === 'netbanking' && (
                 <div className="net-banking">
                   <h3>Select Bank</h3>
+
+                  <input
+                    type="text"
+                    placeholder="Search bank..."
+                    className="input-field search-bar"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                  />
+
                   <select className="input-field">
-                    <option>HDFC Bank</option>
-                    <option>ICICI Bank</option>
-                    <option>SBI Bank</option>
-                    <option>Axis Bank</option>
+                    {filteredBanks.length > 0 ? (
+                      filteredBanks.map((bank, index) => (
+                        <option key={index}>{bank}</option>
+                      ))
+                    ) : (
+                      <option disabled>No matching banks</option>
+                    )}
                   </select>
                 </div>
               )}
+
 
               {selectedMethod === 'upi' && (
                 <div className="upi-payment">
@@ -80,12 +109,15 @@ const Payment = () => {
                 <div className="cod">
                   <h3>Cash on Delivery Selected</h3>
                   <p>You will pay at the time of delivery.</p>
-                  <input type="text" placeholder="Flat No" className="input-field" />
-                  <input type="text" placeholder="Area Name" className="input-field" />
-                  <input type="number" placeholder="Pin code" className="input-field" />
-                  <input type="text" placeholder="Landmark" className="input-field" />
+
+                  <input type="text" placeholder="Flat No / Apartment Name" className="input-field" />
+                  <input type="text" placeholder="Area / Street Name" className="input-field" />
+                  <input type="number" placeholder="Pincode (e.g. 123456)" className="input-field" />
+                  <input type="text" placeholder="Landmark (e.g. Near Mall)" className="input-field" />
+
                   <button className='btn'>Submit</button>
                 </div>
+
               )}
             </div>
           </div>
