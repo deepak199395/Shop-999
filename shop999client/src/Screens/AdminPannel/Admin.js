@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { FaUser, FaBox, FaShoppingCart, FaCog, FaChartBar, FaBars, FaTimes } from "react-icons/fa";
-import "../../Styles/admin.css"; // Import CSS file
+import "../../Styles/admin.css";
+import Dashboard from "./Dashboard";
+import Products from "./Products";
+import Orders from "./Orders";
+import Settings from "./Settings";
+import Profile from "./Profile";
 
 const Admin = () => {
   const [activeSection, setActiveSection] = useState("dashboard");
@@ -13,15 +18,12 @@ const Admin = () => {
     { name: "Orders", icon: <FaShoppingCart />, key: "orders" },
     { name: "Settings", icon: <FaCog />, key: "settings" },
   ];
-
-  return (
+   return (
     <div className="admin-container">
-      {/* 🟢 Hamburger Menu for Mobile */}
       <button className="menu-toggle" onClick={() => setSidebarOpen(!sidebarOpen)}>
         {sidebarOpen ? <FaTimes /> : <FaBars />}
       </button>
 
-      {/* 🟢 Sidebar */}
       <aside className={`admin-sidebar ${sidebarOpen ? "open" : ""}`}>
         <h2>Admin Panel</h2>
         <nav className="admin-nav">
@@ -40,11 +42,10 @@ const Admin = () => {
         </nav>
       </aside>
 
-      {/* 🟢 Main Content */}
       <main className="admin-main">
         <div className="admin-content">
           {activeSection === "dashboard" && <Dashboard />}
-          {activeSection === "profile" && <Profile />}
+          {activeSection === "profile" && <Profile/>}
           {activeSection === "products" && <Products />}
           {activeSection === "orders" && <Orders />}
           {activeSection === "settings" && <Settings />}
@@ -53,19 +54,4 @@ const Admin = () => {
     </div>
   );
 };
-
-/* Dummy Components for Sections */
-const Dashboard = () => <Section title="Dashboard" />;
-const Profile = () => <Section title="Profile" />;
-const Products = () => <Section title="Products" />;
-const Orders = () => <Section title="Orders" />;
-const Settings = () => <Section title="Settings" />;
-
-const Section = ({ title }) => (
-  <div>
-    <h2>{title}</h2>
-    <p>Manage {title.toLowerCase()} from here.</p>
-  </div>
-);
-
 export default Admin;

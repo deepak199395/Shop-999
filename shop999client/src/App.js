@@ -10,6 +10,9 @@ import Admin from './Screens/AdminPannel/Admin'
 import BalconyTckets from './Screens/Products/Ipl'
 import BookingScreen from "../src/Screens/Products/BookingScreen"
 import Payment from './Screens/PaymentScreen/Payment'
+import MovieTckects from './Screens/MovieTickts/MovieTckects'
+import CreateIpl from './Screens/Booking/CreateIpl'
+import CreateMovie from './Screens/Booking/CreateMovie'
 const App = () => {
   return (
     <div>
@@ -24,7 +27,10 @@ const App = () => {
       <Route path='/balconyTicked' element={<BalconyTckets/>}/>
       <Route path='/bookingScreen' element={<BookingScreen/>}/>
       <Route path='/payment' element={<Payment/>}/>
-     </Routes>
+      <Route path='/Movie' element={<MovieTckects/>}/>
+      <Route path='/createipl' element={<CreateIpl/>}/>
+      <Route path='/createMovie' element={<CreateMovie/>}/>
+    </Routes>
     </div>
   )
 }
