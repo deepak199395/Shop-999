@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../Styles/Ipl.css";
-
+import { GetIplTicketInfo } from "../../Api/RestApi";
 const Ipl = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -9,8 +9,7 @@ const Ipl = () => {
 
   const GetTicketInfo = async () => {
     try {
-      const response = await fetch("https://shop999backend.vercel.app/api/auth/getticketsinfo");
-      const result = await response.json();
+      const result = await GetIplTicketInfo()
      console.log(result);
      
       if (result.success && Array.isArray(result.ticketsinfo)) {

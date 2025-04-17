@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "../../Styles/Ipl.css";
+import { getMovieApi } from '../../Api/RestApi';
 
 const MovieTickets = () => {
   const [data, setData] = useState([]);  
@@ -7,8 +8,7 @@ const MovieTickets = () => {
 
   const getMovieInfo = async () => {
     try {
-      const response = await fetch("https://shop999backend.vercel.app/api/auth/getMovie/Api");
-      const result = await response.json();
+      const result = await getMovieApi()
       console.log(result);
 
       if (result.status && Array.isArray(result.getMovie)) {
