@@ -5,6 +5,14 @@
   background-color: #f5f5f5;
   min-height: 30vh;
 }
+.description {
+  font-size: 14px; 
+  word-wrap: break-word;
+  white-space: normal;
+  overflow-wrap: break-word;
+  line-height: 1.4;
+  margin: 8px 0;
+}
 
 .title {
   color: #2e3a46;
