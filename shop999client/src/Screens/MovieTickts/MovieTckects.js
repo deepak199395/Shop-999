@@ -9,7 +9,7 @@ const MovieTickets = () => {
   const getMovieInfo = async () => {
     try {
       const result = await getMovieApi()
-      console.log(result);
+      console.log("===============Movie",result);
 
       if (result.status && Array.isArray(result.getMovie)) {
         setData(result.getMovie);
@@ -39,13 +39,18 @@ const MovieTickets = () => {
         <div className='ticket-container'>
           {data.map((ticket) => (
             <div className='ticket-card' key={ticket._id}>
+              <div className='image-wrapper'>
               <img src={ticket.MovieImage} alt={ticket.MovieName} className='team-img' />
+
+              </div>
               <h2>{ticket.MovieName}</h2>
               <p className='description'>{ticket.MovieDescription}</p>
               <h4>{ticket.MovieGenre}</h4>
               <h3>Rating: {ticket.MovieRating}</h3>
               <h4>{ticket.MovieLanguage}</h4>
               <h3>Movie Release Date: {ticket.MovieReleaseDate}</h3>
+              <button className="buy-btn" >Book Now</button>
+
             </div>
           ))}
         </div>

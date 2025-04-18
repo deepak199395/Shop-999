@@ -22,3 +22,16 @@ export const GetIplTicketInfo = async () => {
     }
 }
 
+export const getLiveShowData=async()=>{
+    try {
+        const response = await fetch(`${BASE_URL}/getLiveshow/api`);
+        const result = response.json()
+        return result;
+    } catch (error) {
+        console.error("API call failed:", error);
+        throw error;
+        
+    }
+
+}
+

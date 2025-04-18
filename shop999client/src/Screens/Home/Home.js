@@ -4,6 +4,7 @@ import Layout from '../Layouts/Layout';
 import Carosel from "../Carosel/Carousels"
 import BalconyTckets from '../Products/Ipl';
 import MovieTckects from '../MovieTickts/MovieTckects';
+import Liveshow from '../LiveShow/Liveshow';
 const Home = () => {
   return (
     <div>
@@ -11,6 +12,7 @@ const Home = () => {
         <Carosel/>
         <BalconyTckets/>
         <MovieTckects/>
+        <Liveshow/>
       </Layout>
     </div>
   )

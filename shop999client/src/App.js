@@ -13,6 +13,7 @@ import Payment from './Screens/PaymentScreen/Payment'
 import MovieTckects from './Screens/MovieTickts/MovieTckects'
 import CreateIpl from './Screens/Booking/CreateIpl'
 import CreateMovie from './Screens/Booking/CreateMovie'
+import Liveshow from './Screens/LiveShow/Liveshow'
 const App = () => {
   return (
     <div>
@@ -30,6 +31,8 @@ const App = () => {
       <Route path='/Movie' element={<MovieTckects/>}/>
       <Route path='/createipl' element={<CreateIpl/>}/>
       <Route path='/createMovie' element={<CreateMovie/>}/>
+      <Route path='/liveshow' element={<Liveshow/>}/>
+
     </Routes>
     </div>
   )

@@ -10,7 +10,7 @@ const Ipl = () => {
   const GetTicketInfo = async () => {
     try {
       const result = await GetIplTicketInfo()
-     console.log(result);
+     console.log("ipltickets================>",result);
      
       if (result.success && Array.isArray(result.ticketsinfo)) {
         setData(result.ticketsinfo);
@@ -45,7 +45,9 @@ const handleOpenBooking=async(ticket)=>{
         <div className="ticket-container"> 
           {data.map((ticket) => (
             <div className="ticket-card" key={ticket._id}>
+              <div className="image-wrapper">
               <img src={ticket.TeamImage} alt={ticket.matchTeam1} className="team-img"/>
+            </div>
               <h2>{ticket.matchName}</h2>
               <p>{ticket.matchTeam1} vs {ticket.matchTeam2}</p>
               <p>Date: {ticket.matchDate}</p>
