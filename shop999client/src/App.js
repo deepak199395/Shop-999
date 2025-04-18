@@ -14,6 +14,8 @@ import MovieTckects from './Screens/MovieTickts/MovieTckects'
 import CreateIpl from './Screens/Booking/CreateIpl'
 import CreateMovie from './Screens/Booking/CreateMovie'
 import Liveshow from './Screens/LiveShow/Liveshow'
+import Profile from './Screens/AdminPannel/Profile'
+import CommingSoon from './Screens/CommingSoon/CommingSoon'
 const App = () => {
   return (
     <div>
@@ -32,6 +34,10 @@ const App = () => {
       <Route path='/createipl' element={<CreateIpl/>}/>
       <Route path='/createMovie' element={<CreateMovie/>}/>
       <Route path='/liveshow' element={<Liveshow/>}/>
+      <Route path='/profile' element={<Profile/>}/>
+      <Route path='/commingSoon' element={<CommingSoon/>}/>
+
+
 
     </Routes>
     </div>

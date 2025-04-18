@@ -1,68 +1,106 @@
 /* 🌟 Header Container */
 .MainHederContainer {
-    height: 60px;
     background-color: #2e2b2b;
     color: #fff;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* 🌟 Navigation List */
-.linklist {
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* 🌟 Search + Navigation Wrapper */
+  .search-nav-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  /* 🌟 Search Input */
+  .search-input {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    width: 250px;
+    transition: all 0.3s ease;
+  }
+  
+  .search-input:focus {
+    box-shadow: 0 0 5px #007bff;
+  }
+  
+  /* 🌟 Navigation List */
+  .linklist {
     list-style: none;
     display: flex;
-    gap: 20px; /* Adds spacing between items */
+    gap: 20px;
     padding: 0;
     margin: 0;
-}
-
-/* 🌟 Navigation Links */
-.linklist li a {
+    flex-wrap: wrap;
+  }
+  
+  /* 🌟 Navigation Links */
+  .linklist li a {
     text-decoration: none;
     color: #fff;
     font-size: 18px;
     font-weight: 500;
     transition: color 0.3s ease-in-out;
-}
-
-.linklist li a:hover {
+  }
+  
+  .linklist li a:hover {
     color: #007bff;
-}
-
-/* 🌟 Login Text Styling */
-.textlogin {
+  }
+  
+  /* 🌟 Login Text Styling */
+  .textlogin {
     font-size: 18px;
     font-weight: bold;
-    margin-left: 20px;
     color: #007bff;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
-}
-
-.textlogin:hover {
+  }
+  
+  .textlogin:hover {
     color: #0056b3;
-}
-
-/* 🌟 Responsive Design */
-@media (max-width: 768px) {
+  }
+  
+  /* 🌟 Responsive Design */
+  @media (max-width: 768px) {
     .MainHederContainer {
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-        padding: 15px;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px;
     }
-
+  
+    .search-nav-wrapper {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      gap: 10px;
+    }
+  
+    .search-input {
+      width: 100%;
+    }
+  
     .linklist {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
     }
-
+  
     .textlogin {
-        margin-left: 0;
-        margin-top: 10px;
+      margin-left: 0;
     }
-}
+  }
+  
