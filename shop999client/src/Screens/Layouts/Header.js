@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../../Styles/Header.css'; // assuming CSS is here
+import '../../Styles/Header.css';
 import Profile from '../Profile/Profile';
 
 const Header = () => {

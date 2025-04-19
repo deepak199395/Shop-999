@@ -30,8 +30,16 @@ export const getLiveShowData=async()=>{
     } catch (error) {
         console.error("API call failed:", error);
         throw error;
-        
-    }
-
+     }
 }
-
+export const userLogin=async()=>{
+  try {
+    const response = await fetch(`${BASE_URL}/login`);
+    const result = response.json()
+    return result;
+  } catch (error) {
+    console.error("API call failed:", error);
+    throw error;
+    
+  }
+}

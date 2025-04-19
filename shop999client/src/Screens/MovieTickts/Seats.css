@@ -1,0 +1,98 @@
+.seat-container {
+    text-align: center;
+    padding: 2rem;
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  
+  .seats-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 40px); /* 10 seats per row */
+    gap: 10px;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+  
+  /* Random pastel colors for available seats */
+  .seat {
+    width: 40px;
+    height: 40px;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    border: 1px solid #999;
+    cursor: pointer;
+    transition: 0.2s ease;
+    color: black;
+    background-color: #f9c2ff; /* fallback color */
+  }
+  
+  .seat:nth-child(6n + 1) { background-color: #f9c2ff; }  /* Pink */
+  .seat:nth-child(6n + 2) { background-color: #c2f9ff; }  /* Light Blue */
+  .seat:nth-child(6n + 3) { background-color: #d0ffc2; }  /* Light Green */
+  .seat:nth-child(6n + 4) { background-color: #ffe0b2; }  /* Light Orange */
+  .seat:nth-child(6n + 5) { background-color: #fce1e4; }  /* Light Red */
+  .seat:nth-child(6n + 6) { background-color: #e0e0f8; }  /* Light Purple */
+  
+  .seat:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+  
+  .seat.selected {
+    background-color: #4caf50 !important;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .seat.unavailable {
+    background-color: #aaa !important;
+    color: white;
+    cursor: not-allowed;
+    border: 1px solid #777;
+  }
+  
+  .selected-info {
+    margin-top: 20px;
+    font-size: 1rem;
+  }
+  
+  .buy-btn {
+    margin-top: 20px;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.95rem;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .buy-btn:hover:not(:disabled) {
+    background-color: #0b7dda;
+  }
+  
+  .buy-btn:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+  }
+  /* 🌐 Responsive for smaller screens */
+@media (max-width: 600px) {
+    .seat {
+      font-size: 0.65rem;
+    }
+  
+    .buy-btn {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+  
+    .selected-info {
+      font-size: 0.9rem;
+    }
+  }

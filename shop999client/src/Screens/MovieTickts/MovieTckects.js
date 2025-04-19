@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import "../../Styles/Ipl.css";
 import { getMovieApi } from '../../Api/RestApi';
+import { useNavigate } from 'react-router-dom';
 
 const MovieTickets = () => {
   const [data, setData] = useState([]);  
   const [loading, setLoading] = useState(true);
+  const navigation = useNavigate()
 
   const getMovieInfo = async () => {
     try {
       const result = await getMovieApi()
-      console.log("===============Movie",result);
+      console.log(result);
 
       if (result.status && Array.isArray(result.getMovie)) {
         setData(result.getMovie);
@@ -30,6 +32,10 @@ const MovieTickets = () => {
     getMovieInfo();
   }, []);
 
+
+  const handleBookNow=(movie)=>{
+    navigation("/Movie-Info",{state:movie})
+  }
   return (
     <div className='container'>
       <h1 className='title'>Movie Tickets</h1>
@@ -41,15 +47,14 @@ const MovieTickets = () => {
             <div className='ticket-card' key={ticket._id}>
               <div className='image-wrapper'>
               <img src={ticket.MovieImage} alt={ticket.MovieName} className='team-img' />
-
-              </div>
+            </div>
               <h2>{ticket.MovieName}</h2>
               <p className='description'>{ticket.MovieDescription}</p>
               <h4>{ticket.MovieGenre}</h4>
               <h3>Rating: {ticket.MovieRating}</h3>
               <h4>{ticket.MovieLanguage}</h4>
               <h3>Movie Release Date: {ticket.MovieReleaseDate}</h3>
-              <button className="buy-btn" >Book Now</button>
+              <button className="buy-btn" onClick={()=>handleBookNow(ticket)} >Book Now</button>
 
             </div>
           ))}
