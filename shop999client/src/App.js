@@ -18,6 +18,12 @@ import Profile from './Screens/AdminPannel/Profile'
 import CommingSoon from './Screens/CommingSoon/CommingSoon'
 import MovieInfo from './Screens/MovieTickts/MovieInfo'
 import SeatSelection from './Screens/MovieTickts/SeatSelection'
+import Footerbar from './Screens/FooterBar/Footerbar'
+import CancellationandRefund from './Screens/FooterBar/Contents/CancellationandRefund'
+import ContactUs from './Screens/FooterBar/Contents/ContactUs'
+import PrivacyPolicy from './Screens/FooterBar/Contents/PrivacyPolicy'
+import ShippingandDelivery from './Screens/FooterBar/Contents/ShippingandDelivery'
+import TermsandConditions from './Screens/FooterBar/Contents/TermsandConditions'
 const App = () => {
   return (
     <div>
@@ -40,6 +46,12 @@ const App = () => {
       <Route path='/commingSoon' element={<CommingSoon/>}/>
       <Route path='/Movie-Info' element={<MovieInfo/>}/>
       <Route path='/Seat-Selection' element={<SeatSelection/>}/>
+      <Route path='/Footer-bar' element={<Footerbar/>}/>
+      <Route path='/Cancellationand-Refund' element={<CancellationandRefund/>}/>
+      <Route path='/Contact-Us' element={<ContactUs/>}/>
+      <Route path='/Privacy-Policy' element={<PrivacyPolicy/>}/>
+      <Route path='/Shippingand-Delivery' element={<ShippingandDelivery/>}/>
+      <Route path='/Termsand-Conditions' element={<TermsandConditions/>}/>
 
      </Routes>
     </div>

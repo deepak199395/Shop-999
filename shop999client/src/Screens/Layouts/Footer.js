@@ -1,9 +1,9 @@
 import React from 'react'
-
+import "../../Styles/Footer.css"
 const Footer = () => {
   return (
     <footer style={{ background: "#333", padding: "10px", color: "white", textAlign: "center" }}>
-    <p>© 2025 Shop@999/-     All rights reserved.</p>
+    <p className='titlefooter'>© 2025 ShowStopper All rights reserved.</p>
   </footer>
   )
 }
