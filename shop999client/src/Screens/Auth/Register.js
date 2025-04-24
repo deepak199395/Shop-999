@@ -20,7 +20,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://shop999backend.vercel.app/api/auth/create",
+        "https://shop999backend.vercel.app/back-end/rest-API/Secure/api/v1/auth/Create-User/api1",
         {
           method: "POST",
           headers: {
